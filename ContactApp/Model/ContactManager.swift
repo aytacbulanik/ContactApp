@@ -9,9 +9,8 @@ import Foundation
 
 struct ContactManager {
     
-   static var contacts : [[String : String]] {
-        let data = try? PlistManager.array(fileName: "ContactsDB", extention_: "plist")
-       return data ?? [[String: String]]()
+   static var contacts : [Contact] {
+        let data = try! PlistManager.array(fileName: "ContactsDB", extention_: "plist")
+       return [Contact]()
+       }
     }
-    
-}
