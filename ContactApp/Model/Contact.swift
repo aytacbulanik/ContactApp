@@ -33,6 +33,7 @@ extension Contact {
         static let stateKey = "state"
         static let zipKey = "zip"
         static let avatarNameKey = "avatarName"
+        static let imageKey = "image"
     }
     
     init? (data : [String:String]) {
@@ -55,6 +56,13 @@ extension Contact {
             state = stateData
             zip = zipData
             avatarName = avatarNameData
+            favorite = false
+        if let imageDate = data[Key.imageKey] {
+            image = UIImage(named: imageDate)
+        } else {
+            image = nil
+        }
+            
     }
     
 }

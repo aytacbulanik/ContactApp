@@ -11,6 +11,6 @@ struct ContactManager {
     
    static var contacts : [Contact] {
         let data = try! PlistManager.array(fileName: "ContactsDB", extention_: "plist")
-       return [Contact]()
+       return data.compactMap { Contact(data: $0)}
        }
     }

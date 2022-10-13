@@ -8,23 +8,29 @@
 import UIKit
 
 class ContactVC: UITableViewController {
-
+    
+    var contactArray : [Contact] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(ContactManager.contacts)
+        contactArray = ContactManager.contacts
+        
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return contactArray.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        cell.textLabel?.text = contactArray[indexPath.row].firstName
+        return cell
     }
 
    
