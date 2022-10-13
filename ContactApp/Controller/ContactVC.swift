@@ -12,7 +12,7 @@ class ContactVC: UITableViewController {
     var contactArray : [Contact] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        contactArray = ContactManager.contacts
+        contactArray = ContactManager.contacts.sorted{$0 < $1}
         
     }
 
@@ -33,9 +33,12 @@ class ContactVC: UITableViewController {
         cell.avatarImage.image = UIImage(named: contactObject.avatarName)
         cell.nameLabel.text = "\(contactObject.firstName) \(contactObject.lastName)"
         cell.detailNameLabel.text = "\(contactObject.streetAddress)"
-        cell.favoriteİmage.image = nil
+        cell.favoriteİmage.image = UIImage(systemName: "star.fill")
+        
         return cell
     }
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(contactArray[indexPath.row])")
+    }
    
 }

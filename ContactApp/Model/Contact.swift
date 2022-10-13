@@ -8,7 +8,11 @@
 import Foundation
 import UIKit
 
-struct Contact {
+struct Contact : Comparable{
+    static func < (lhs: Contact, rhs: Contact) -> Bool {
+        return lhs.firstName < rhs.lastName
+    }
+    
     let firstName : String
     let lastName : String
     let phoneNumber : String
