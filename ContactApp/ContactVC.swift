@@ -12,7 +12,7 @@ class ContactVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        print(ContactManager.contacts)
     }
 
     // MARK: - Table view data source
