@@ -28,8 +28,12 @@ class ContactVC: UITableViewController {
         return contactArray.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
-        cell.textLabel?.text = contactArray[indexPath.row].firstName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactCellVC
+        let contactObject = contactArray[indexPath.row]
+        cell.avatarImage.image = UIImage(named: contactObject.avatarName)
+        cell.nameLabel.text = "\(contactObject.firstName) \(contactObject.lastName)"
+        cell.detailNameLabel.text = "\(contactObject.streetAddress)"
+        cell.favoriteİmage.image = nil
         return cell
     }
 

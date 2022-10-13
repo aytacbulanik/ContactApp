@@ -18,6 +18,7 @@
 		B420453328F83BBB00CF7CB6 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420453228F83BBB00CF7CB6 /* Contact.swift */; };
 		B420453528F83CB100CF7CB6 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420453428F83CB100CF7CB6 /* ContactManager.swift */; };
 		B420453828F8409600CF7CB6 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420453728F8409600CF7CB6 /* PlistManager.swift */; };
+		B428EAA228F8BD7400FA6D90 /* ContactCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B428EAA128F8BD7400FA6D90 /* ContactCellVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B420453228F83BBB00CF7CB6 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		B420453428F83CB100CF7CB6 /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 		B420453728F8409600CF7CB6 /* PlistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
+		B428EAA128F8BD7400FA6D90 /* ContactCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +71,7 @@
 				B420451828F8363D00CF7CB6 /* AppDelegate.swift */,
 				B420451A28F8363D00CF7CB6 /* SceneDelegate.swift */,
 				B420451E28F8363D00CF7CB6 /* Main.storyboard */,
-				B420452C28F8395500CF7CB6 /* ContactVC.swift */,
-				B420453028F83A6700CF7CB6 /* DetailContactVC.swift */,
+				B428EAA028F8BD4B00FA6D90 /* Controller */,
 				B420453628F83D8400CF7CB6 /* Model */,
 				B420452128F8363F00CF7CB6 /* Assets.xcassets */,
 				B420452328F8363F00CF7CB6 /* LaunchScreen.storyboard */,
@@ -88,6 +89,16 @@
 				B420453728F8409600CF7CB6 /* PlistManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B428EAA028F8BD4B00FA6D90 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B420452C28F8395500CF7CB6 /* ContactVC.swift */,
+				B420453028F83A6700CF7CB6 /* DetailContactVC.swift */,
+				B428EAA128F8BD7400FA6D90 /* ContactCellVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 				B420453128F83A6700CF7CB6 /* DetailContactVC.swift in Sources */,
 				B420453828F8409600CF7CB6 /* PlistManager.swift in Sources */,
 				B420452D28F8395500CF7CB6 /* ContactVC.swift in Sources */,
+				B428EAA228F8BD7400FA6D90 /* ContactCellVC.swift in Sources */,
 				B420453328F83BBB00CF7CB6 /* Contact.swift in Sources */,
 				B420451928F8363D00CF7CB6 /* AppDelegate.swift in Sources */,
 				B420453528F83CB100CF7CB6 /* ContactManager.swift in Sources */,
