@@ -12,7 +12,7 @@ class ContactVC: UITableViewController {
     var contactArray : [Contact] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        contactArray = ContactManager.contacts.sorted{$0 < $1}
+        contactArray = ContactManager.contacts.sorted{$0.firstName < $1.firstName}
         
     }
 

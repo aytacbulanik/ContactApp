@@ -45,7 +45,7 @@ extension Contact {
               let lastNamedata = data[Key.lastNameKey] ,
               let phoneNumberData = data[Key.phoneNumberKey] ,
               let emailData = data[Key.emailKey] ,
-              let streetData = data[Key.stateKey] ,
+              let streetData = data[Key.streetAddressKey] ,
               let cityData = data[Key.cityKey] ,
               let stateData = data[Key.stateKey] ,
               let zipData = data[Key.zipKey] ,
