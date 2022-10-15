@@ -8,7 +8,12 @@
 import UIKit
 
 class DetailContactVC: UIViewController {
-
+    
+    var contact : Contact? {
+        didSet {
+            print(contact?.firstName)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

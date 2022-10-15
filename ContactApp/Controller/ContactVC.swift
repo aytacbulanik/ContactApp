@@ -10,6 +10,7 @@ import UIKit
 class ContactVC: UITableViewController {
     
     var contactArray : [Contact] = []
+    var sendContact : Contact?
     override func viewDidLoad() {
         super.viewDidLoad()
         contactArray = ContactManager.contacts.sorted{$0.firstName < $1.firstName}
@@ -38,7 +39,15 @@ class ContactVC: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(contactArray[indexPath.row])")
+        sendContact = contactArray[indexPath.row]
+        performSegue(withIdentifier: "detailSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            let baglanti = segue.destination as! DetailContactVC
+            baglanti.contact = sendContact
+        }
     }
    
 }
