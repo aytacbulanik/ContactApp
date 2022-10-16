@@ -14,10 +14,10 @@
 		B420452528F8363F00CF7CB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B420452328F8363F00CF7CB6 /* LaunchScreen.storyboard */; };
 		B420452D28F8395500CF7CB6 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420452C28F8395500CF7CB6 /* ContactVC.swift */; };
 		B420452F28F83A3A00CF7CB6 /* ContactsDB.plist in Resources */ = {isa = PBXBuildFile; fileRef = B420452E28F83A3A00CF7CB6 /* ContactsDB.plist */; };
-		B420453128F83A6700CF7CB6 /* DetailContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420453028F83A6700CF7CB6 /* DetailContactVC.swift */; };
 		B420453328F83BBB00CF7CB6 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420453228F83BBB00CF7CB6 /* Contact.swift */; };
 		B420453528F83CB100CF7CB6 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420453428F83CB100CF7CB6 /* ContactManager.swift */; };
 		B420453828F8409600CF7CB6 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420453728F8409600CF7CB6 /* PlistManager.swift */; };
+		B42746A128FBFC200011C477 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42746A028FBFC200011C477 /* DetailVC.swift */; };
 		B428EAA228F8BD7400FA6D90 /* ContactCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B428EAA128F8BD7400FA6D90 /* ContactCellVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,10 +31,10 @@
 		B420452628F8363F00CF7CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B420452C28F8395500CF7CB6 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
 		B420452E28F83A3A00CF7CB6 /* ContactsDB.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ContactsDB.plist; sourceTree = "<group>"; };
-		B420453028F83A6700CF7CB6 /* DetailContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactVC.swift; sourceTree = "<group>"; };
 		B420453228F83BBB00CF7CB6 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		B420453428F83CB100CF7CB6 /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 		B420453728F8409600CF7CB6 /* PlistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
+		B42746A028FBFC200011C477 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		B428EAA128F8BD7400FA6D90 /* ContactCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,8 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				B420452C28F8395500CF7CB6 /* ContactVC.swift */,
-				B420453028F83A6700CF7CB6 /* DetailContactVC.swift */,
 				B428EAA128F8BD7400FA6D90 /* ContactCellVC.swift */,
+				B42746A028FBFC200011C477 /* DetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,12 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B420453128F83A6700CF7CB6 /* DetailContactVC.swift in Sources */,
 				B420453828F8409600CF7CB6 /* PlistManager.swift in Sources */,
 				B420452D28F8395500CF7CB6 /* ContactVC.swift in Sources */,
 				B428EAA228F8BD7400FA6D90 /* ContactCellVC.swift in Sources */,
 				B420453328F83BBB00CF7CB6 /* Contact.swift in Sources */,
 				B420451928F8363D00CF7CB6 /* AppDelegate.swift in Sources */,
+				B42746A128FBFC200011C477 /* DetailVC.swift in Sources */,
 				B420453528F83CB100CF7CB6 /* ContactManager.swift in Sources */,
 				B420451B28F8363D00CF7CB6 /* SceneDelegate.swift in Sources */,
 			);

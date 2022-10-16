@@ -45,7 +45,7 @@ class ContactVC: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
-            let baglanti = segue.destination as! DetailContactVC
+            let baglanti = segue.destination as! DetailVC
             baglanti.contact = sendContact
         }
     }
