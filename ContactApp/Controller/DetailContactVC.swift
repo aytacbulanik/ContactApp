@@ -7,7 +7,9 @@
 
 import UIKit
 
-class DetailContactVC: UIViewController {
+class DetailContactVC: UIViewController, UITableViewDelegate , UITableViewDataSource {
+   
+    
     
     var contact : Contact? {
         didSet {
@@ -18,6 +20,13 @@ class DetailContactVC: UIViewController {
         super.viewDidLoad()
 
         
+    }
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
 
 }
