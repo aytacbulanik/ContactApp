@@ -13,7 +13,7 @@ class DetailVC: UITableViewController {
     @IBOutlet var phoneNumberLabel : UILabel!
     @IBOutlet var mailLabel : UILabel!
     @IBOutlet var addressLabel : UILabel!
-    
+    @IBOutlet var favoriteButton : UIButton!
         var contact : Contact?
     
     override func viewDidLoad() {
@@ -33,6 +33,10 @@ class DetailVC: UITableViewController {
             \(contact.zip)
             \(contact.city) / \(contact.state)
         """
+    }
+    
+    @IBAction func  pressedFavoriteButton(_ sender : UIButton) {
+        print("button")
     }
 
    

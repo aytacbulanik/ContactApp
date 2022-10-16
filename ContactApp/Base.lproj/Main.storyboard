@@ -241,6 +241,9 @@
                                                     <rect key="frame" x="20" y="11" width="162" height="23"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Mark as a Favorite"/>
+                                                    <connections>
+                                                        <action selector="pressedFavoriteButton:" destination="F1E-PE-Y6D" eventType="touchUpInside" id="ID6-TH-DeH"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -261,6 +264,7 @@
                     <navigationItem key="navigationItem" id="21u-70-EKr"/>
                     <connections>
                         <outlet property="addressLabel" destination="WvR-mX-sxP" id="uBj-kz-64f"/>
+                        <outlet property="favoriteButton" destination="9cJ-7P-5NH" id="Tg3-fr-IPS"/>
                         <outlet property="mailLabel" destination="419-kk-YcL" id="aiO-5C-V7f"/>
                         <outlet property="personImage" destination="pB5-NL-hj5" id="6bB-xO-uen"/>
                         <outlet property="personNameLabel" destination="6mD-w2-SH2" id="LAZ-1s-UOW"/>
