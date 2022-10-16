@@ -211,7 +211,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvR-mX-sxP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvR-mX-sxP">
                                                     <rect key="frame" x="326.33333333333331" y="39.333333333333336" width="43.666666666666686" height="21.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" systemColor="opaqueSeparatorColor"/>
@@ -260,7 +260,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="21u-70-EKr"/>
                     <connections>
+                        <outlet property="addressLabel" destination="WvR-mX-sxP" id="uBj-kz-64f"/>
+                        <outlet property="mailLabel" destination="419-kk-YcL" id="aiO-5C-V7f"/>
                         <outlet property="personImage" destination="pB5-NL-hj5" id="6bB-xO-uen"/>
+                        <outlet property="personNameLabel" destination="6mD-w2-SH2" id="LAZ-1s-UOW"/>
+                        <outlet property="phoneNumberLabel" destination="a6w-Tu-ZVT" id="5Hl-hK-IR6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBG-aB-TRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
