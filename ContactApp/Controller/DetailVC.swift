@@ -7,15 +7,22 @@
 
 import UIKit
 
-class DetailVC: UITableViewController {
+protocol takeFavoriteProtokolDelegate {
+    func makeFavorite(contact : Contact)
+}
+
+class DetailVC: UITableViewController, takeFavoriteProtokolDelegate {
+    
+    
     @IBOutlet var personImage : UIImageView!
     @IBOutlet var personNameLabel : UILabel!
     @IBOutlet var phoneNumberLabel : UILabel!
     @IBOutlet var mailLabel : UILabel!
     @IBOutlet var addressLabel : UILabel!
     @IBOutlet var favoriteButton : UIButton!
-        var contact : Contact?
     
+    var contact : Contact?
+    var delegate : takeFavoriteProtokolDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         detailContact(object: contact)
@@ -36,7 +43,8 @@ class DetailVC: UITableViewController {
     }
     
     @IBAction func  pressedFavoriteButton(_ sender : UIButton) {
-        print("button")
+        guard let contact else {return}
+        delegate?.makeFavorite(contact: contact)
     }
 
    

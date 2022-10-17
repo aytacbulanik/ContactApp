@@ -51,3 +51,11 @@ class ContactVC: UITableViewController {
     }
    
 }
+
+extension ContactVC : takeFavoriteProtokolDelegate {
+    func makeFavorite(contact: Contact) {
+        print(contact.firstName)
+    }
+    
+    
+}
