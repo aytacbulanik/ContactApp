@@ -24,6 +24,10 @@ struct Contact : Comparable{
     let avatarName : String
     let image : UIImage?
     let favorite : Bool
+    
+    var firstNameStr : String {
+        return String(firstName.prefix(1))
+    }
 }
 
 extension Contact {

@@ -14,7 +14,7 @@ class ContactVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contactArray = ContactManager.contacts.sorted{$0.firstName < $1.firstName}
-        
+        print(ContactManager.firstLetterSet)
     }
 
     // MARK: - Table view data source
@@ -49,10 +49,11 @@ class ContactVC: UITableViewController {
             baglanti.contact = sendContact
         }
     }
+    
    
 }
 
-extension ContactVC : takeFavoriteProtokolDelegate {
+extension ContactVC : TakeFavoriteProtokolDelegate {
     func makeFavorite(contact: Contact) {
         print(contact.firstName)
     }

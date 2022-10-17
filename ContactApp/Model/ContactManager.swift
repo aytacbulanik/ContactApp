@@ -13,4 +13,12 @@ struct ContactManager {
         let data = try! PlistManager.array(fileName: "ContactsDB", extention_: "plist")
        return data.compactMap { Contact(data: $0)}
        }
+    
+    static var firstLetterSet : [String] {
+        var letter : [String] = [String]()
+        for eleman in contacts {
+            letter.append(eleman.firstNameStr)
+        }
+        return letter
+    }
     }

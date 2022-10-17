@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol takeFavoriteProtokolDelegate {
+protocol TakeFavoriteProtokolDelegate {
     func makeFavorite(contact : Contact)
 }
 
-class DetailVC: UITableViewController, takeFavoriteProtokolDelegate {
+class DetailVC: UITableViewController  {
     
     
     @IBOutlet var personImage : UIImageView!
@@ -22,7 +22,7 @@ class DetailVC: UITableViewController, takeFavoriteProtokolDelegate {
     @IBOutlet var favoriteButton : UIButton!
     
     var contact : Contact?
-    var delegate : takeFavoriteProtokolDelegate?
+    var delegate : TakeFavoriteProtokolDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         detailContact(object: contact)
