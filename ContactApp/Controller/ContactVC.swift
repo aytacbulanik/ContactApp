@@ -9,15 +9,13 @@ import UIKit
 
 class ContactVC: UITableViewController {
     
-    var contactArray : [Contact] = []
     var uniqueLetter : [String] = []
-    var sectionadContactArray : [[Contact]] = []
+    var sectionadContactArray : [[Contact]] = ContactManager.sectinedContacts
     var sendContact : Contact?
     override func viewDidLoad() {
         super.viewDidLoad()
-        contactArray = ContactManager.contacts.sorted{$0.firstName < $1.firstName}
-        uniqueLetter = ContactManager.uniqueFirstLetter
-        sectionadContactArray = ContactManager().sectinedContacts
+   
+
     }
 
     // MARK: - Table view data source
@@ -29,25 +27,32 @@ class ContactVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return contactArray.count
+        return sectionadContactArray[section].count
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactCellVC
-        let contactObject = contactArray[indexPath.row]
-        cell.avatarImage.image = UIImage(named: contactObject.avatarName)
-        cell.nameLabel.text = "\(contactObject.firstName) \(contactObject.lastName)"
-        cell.detailNameLabel.text = "\(contactObject.streetAddress)"
+        let contact = sectionadContactArray[indexPath.section][indexPath.row]
+        cell.avatarImage.image = UIImage(named: contact.avatarName)
+        cell.nameLabel.text = "\(contact.firstName) \(contact.lastName)"
+        cell.detailNameLabel.text = "\(contact.streetAddress)"
         cell.favoriteİmage.image = UIImage(systemName: "star.fill")
         
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        sendContact = contactArray[indexPath.row]
+        sendContact = sectionadContactArray[indexPath.section][indexPath.row]
         performSegue(withIdentifier: "detailSegue", sender: nil)
+        
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return ContactManager.uniqueFirstLetter[section]
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return uniqueLetter
+        return ContactManager.uniqueFirstLetter
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

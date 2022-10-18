@@ -21,9 +21,9 @@ struct ContactManager {
     }
     
 
-        var sectinedContacts : [[Contact]] {
+      static var sectinedContacts : [[Contact]] {
         return ContactManager.uniqueFirstLetter.map { firstletter in
-        let filteredContacts = ContactManager.contacts.filter { $0.firstName == firstletter }
+        let filteredContacts = ContactManager.contacts.filter { $0.firstNameStr == firstletter }
         return filteredContacts.sorted(by: {$0.firstName < $1.firstName})
             }
         }
