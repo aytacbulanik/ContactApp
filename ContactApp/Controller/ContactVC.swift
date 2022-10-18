@@ -11,19 +11,20 @@ class ContactVC: UITableViewController {
     
     var contactArray : [Contact] = []
     var uniqueLetter : [String] = []
+    var sectionadContactArray : [[Contact]] = []
     var sendContact : Contact?
     override func viewDidLoad() {
         super.viewDidLoad()
         contactArray = ContactManager.contacts.sorted{$0.firstName < $1.firstName}
         uniqueLetter = ContactManager.uniqueFirstLetter
-    
+        sectionadContactArray = ContactManager().sectinedContacts
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return sectionadContactArray.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

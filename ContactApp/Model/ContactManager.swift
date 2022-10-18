@@ -19,4 +19,14 @@ struct ContactManager {
         let firstLetterSet = Set(firstLetters)
         return Array(firstLetterSet).sorted()
     }
+    
+
+        var sectinedContacts : [[Contact]] {
+        return ContactManager.uniqueFirstLetter.map { firstletter in
+        let filteredContacts = ContactManager.contacts.filter { $0.firstName == firstletter }
+        return filteredContacts.sorted(by: {$0.firstName < $1.firstName})
+            }
+        }
+
+    
     }
