@@ -14,11 +14,9 @@ struct ContactManager {
        return data.compactMap { Contact(data: $0)}
        }
     
-    static var firstLetterSet : [String] {
-        var letter : [String] = [String]()
-        for eleman in contacts {
-            letter.append(eleman.firstNameStr)
-        }
-        return letter
+    static var uniqueFirstLetter : [String] {
+        var firstLetters = contacts.map {$0.firstNameStr}
+        var firstLetterSet = Set(firstLetters)
+        return Array(firstLetterSet)
     }
     }

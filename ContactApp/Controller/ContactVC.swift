@@ -10,11 +10,13 @@ import UIKit
 class ContactVC: UITableViewController {
     
     var contactArray : [Contact] = []
+    var uniqueLetter : [String] = []
     var sendContact : Contact?
     override func viewDidLoad() {
         super.viewDidLoad()
         contactArray = ContactManager.contacts.sorted{$0.firstName < $1.firstName}
-        print(ContactManager.firstLetterSet)
+        uniqueLetter = ContactManager.uniqueFirstLetter
+    
     }
 
     // MARK: - Table view data source
@@ -60,3 +62,4 @@ extension ContactVC : TakeFavoriteProtokolDelegate {
     
     
 }
+
