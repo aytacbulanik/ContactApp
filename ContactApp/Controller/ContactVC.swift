@@ -25,7 +25,7 @@ class ContactVC: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return contactArray.count
@@ -43,6 +43,10 @@ class ContactVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         sendContact = contactArray[indexPath.row]
         performSegue(withIdentifier: "detailSegue", sender: nil)
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return uniqueLetter
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

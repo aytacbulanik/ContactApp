@@ -15,8 +15,8 @@ struct ContactManager {
        }
     
     static var uniqueFirstLetter : [String] {
-        var firstLetters = contacts.map {$0.firstNameStr}
-        var firstLetterSet = Set(firstLetters)
-        return Array(firstLetterSet)
+        let firstLetters = contacts.map {$0.firstNameStr}
+        let firstLetterSet = Set(firstLetters)
+        return Array(firstLetterSet).sorted()
     }
     }
