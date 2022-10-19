@@ -7,19 +7,24 @@
 
 import UIKit
 
-class ContactVC: UITableViewController {
+class ContactVC: UITableViewController , TakeFavoriteProtokolDelegate {
+    
+    
     
     var uniqueLetter : [String] = []
     var sectionadContactArray : [[Contact]] = ContactManager.sectinedContacts
     var sendContact : Contact?
+    var delegate : TakeFavoriteProtokolDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+        delegate = self
 
     }
 
     // MARK: - Table view data source
-
+    func makeFavorite(contact: Contact) {
+        print(contact)
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return sectionadContactArray.count
@@ -65,11 +70,4 @@ class ContactVC: UITableViewController {
    
 }
 
-extension ContactVC : TakeFavoriteProtokolDelegate {
-    func makeFavorite(contact: Contact) {
-        print(contact.firstName)
-    }
-    
-    
-}
 
