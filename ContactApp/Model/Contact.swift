@@ -8,9 +8,12 @@
 import Foundation
 import UIKit
 
-struct Contact : Comparable , Hashable{
+struct Contact : Comparable , Hashable ,Equatable {
     static func < (lhs: Contact, rhs: Contact) -> Bool {
         return lhs.firstName < rhs.lastName
+    }
+    static func == (lhs : Contact , rhs : Contact) -> Bool{
+        return lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName
     }
     
     let firstName : String
@@ -64,7 +67,7 @@ extension Contact {
             state = stateData
             zip = zipData
             avatarName = avatarNameData
-            favorite = true
+            favorite = false
         if let imageDate = data[Key.imageKey] {
             image = UIImage(named: imageDate)
         } else {

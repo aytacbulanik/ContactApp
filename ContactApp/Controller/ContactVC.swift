@@ -13,18 +13,34 @@ class ContactVC: UITableViewController , TakeFavoriteProtokolDelegate {
     
     var uniqueLetter : [String] = []
     var sectionadContactArray : [[Contact]] = ContactManager.sectinedContacts
-    var sendContact : Contact?
-    var delegate : TakeFavoriteProtokolDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self
+        
 
     }
 
     // MARK: - Table view data source
     func makeFavorite(contact: Contact) {
-        con
-        tableView.reloadData()
+        
+        var sectionIndex : Int? = nil
+        var contactIndex : Int? = nil
+        
+        
+        for (index, contacts) in sectionadContactArray.enumerated() {
+            
+            if let indexOfContacts = contacts.index(of: contact) {
+                
+                sectionIndex = index
+                contactIndex = indexOfContacts
+                break
+            }
+        }
+        
+        
+        if let sectionIndex = sectionIndex , let contactIndex = contactIndex {
+            sectionadContactArray[sectionIndex][contactIndex].favorite = contact.favorite
+            tableView.reloadData()
+        }
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -47,8 +63,10 @@ class ContactVC: UITableViewController , TakeFavoriteProtokolDelegate {
         }
         return cell
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        sendContact = sectionadContactArray[indexPath.section][indexPath.row]
         performSegue(withIdentifier: "detailSegue", sender: nil)
         
     }
@@ -62,8 +80,13 @@ class ContactVC: UITableViewController , TakeFavoriteProtokolDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let selectedcontact = sectionadContactArray[indexPath.section][indexPath.row]
             let baglanti = segue.destination as! DetailVC
-            baglanti.contact = sendContact
+            baglanti.delegate = self
+            baglanti.contact = selectedcontact
+            
+        }
         }
     }
     
