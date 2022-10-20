@@ -23,7 +23,8 @@ class ContactVC: UITableViewController , TakeFavoriteProtokolDelegate {
 
     // MARK: - Table view data source
     func makeFavorite(contact: Contact) {
-        print(contact)
+        con
+        tableView.reloadData()
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -34,17 +35,16 @@ class ContactVC: UITableViewController , TakeFavoriteProtokolDelegate {
         // #warning Incomplete implementation, return the number of rows
         return sectionadContactArray[section].count
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactCellVC
         let contact = sectionadContactArray[indexPath.section][indexPath.row]
         cell.avatarImage.image = UIImage(named: contact.avatarName)
         cell.nameLabel.text = "\(contact.firstName) \(contact.lastName)"
         cell.detailNameLabel.text = "\(contact.streetAddress)"
-        cell.favoriteİmage.image = UIImage(systemName: "star.fill")
-        
+        if contact.favorite {
+            cell.favoriteİmage.image = UIImage(systemName: "star.fill")
+        }
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

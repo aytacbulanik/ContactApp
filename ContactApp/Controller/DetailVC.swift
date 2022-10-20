@@ -43,7 +43,7 @@ class DetailVC: UITableViewController  {
     }
     
     @IBAction func  pressedFavoriteButton(_ sender : UIButton) {
-        guard let contact else {return}
+        guard var contact else {return}
         delegate?.makeFavorite(contact: contact)
     }
 

@@ -23,7 +23,7 @@ struct Contact : Comparable , Hashable{
     let zip : String
     let avatarName : String
     let image : UIImage?
-    let favorite : Bool
+    var favorite : Bool
     
     var firstNameStr : String {
         return String(firstName.prefix(1))
@@ -64,7 +64,7 @@ extension Contact {
             state = stateData
             zip = zipData
             avatarName = avatarNameData
-            favorite = false
+            favorite = true
         if let imageDate = data[Key.imageKey] {
             image = UIImage(named: imageDate)
         } else {
