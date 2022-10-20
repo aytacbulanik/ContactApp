@@ -28,7 +28,7 @@ class ContactVC: UITableViewController , TakeFavoriteProtokolDelegate {
         
         for (index, contacts) in sectionadContactArray.enumerated() {
             
-            if let indexOfContacts = contacts.index(of: contact) {
+            if let indexOfContacts = contacts.firstIndex(of: contact) {
                 
                 sectionIndex = index
                 contactIndex = indexOfContacts
