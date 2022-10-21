@@ -64,7 +64,7 @@ class ContactVC: UITableViewController , TakeFavoriteProtokolDelegate {
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return 100
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "detailSegue", sender: nil)
@@ -83,6 +83,7 @@ class ContactVC: UITableViewController , TakeFavoriteProtokolDelegate {
         if let indexPath = tableView.indexPathForSelectedRow {
             let selectedcontact = sectionadContactArray[indexPath.section][indexPath.row]
             let baglanti = segue.destination as! DetailVC
+            print(selectedcontact)
             baglanti.delegate = self
             baglanti.contact = selectedcontact
             
